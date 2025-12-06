@@ -12,7 +12,15 @@ inputs:
   sourceReport:
     description: 'Display Source report if such exists'
     required: false
-    default: 'no'
+    default: 'yes'
+  errorSeverity:
+    description: 'Error severity'
+    required: false
+    default: '10'
+  warningSeverity:
+    description: 'Warning severity'
+    required: false
+    default: '10'
 outputs:
   time:
     description: ''
@@ -23,6 +31,8 @@ runs:
     - ${{ inputs.fileExtensions }}
     - ${{ inputs.onlyErrors }}
     - ${{ inputs.sourceReport }}
+    - ${{ inputs.errorSeverity }}
+    - ${{ inputs.warningSeverity }}
 branding:
   icon: 'code'
   color: 'green'
